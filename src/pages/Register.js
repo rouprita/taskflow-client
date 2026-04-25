@@ -15,7 +15,7 @@ function Register() {
       setSuccess('Account created! Redirecting to login...');
       setTimeout(() => navigate('/login'), 2000);
     } catch (err) {
-      setError('Registration failed. Email may already exist.');
+      setError('Registration failed: ' + (err.response?.data || err.message));
     }
   };
 
